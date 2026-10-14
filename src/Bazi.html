@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="R4.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عدد بده، محیط و مساحت بگیر</title>
+</head>
+<style>
+    #container {
+        height: auto;
+        width: 100%;
+    }
+    
+    #o {
+        position: absolute;
+        right: 100px;
+        top: 50px;
+    }
+    
+    @font-face {
+        font-family: radmehr;
+        src: url("Parastoo.eot");
+        src: url("Parastoo.ttf");
+        src: url("Parastoo.woff");
+        src: url("Parastoo.woff2");
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    input {
+        border-radius: 7px;
+        width: 150px;
+        height: 60px;
+        font-size: 28px;
+        text-align: center;
+        font-family: radmehr;
+        background-color: red;
+        position: absolute;
+        right: 10px;
+    }
+    
+    #p {
+        font-family: radmehr;
+        font-size: 25px;
+        position: absolute;
+        top: 50px;
+        right: 580px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    h1 {
+        font-family: radmehr;
+        font-size: 26px;
+    }
+    
+    #f1 {
+        position: absolute;
+        right: 10px;
+    }
+    
+    .f2 {
+        position: absolute;
+        right: 10px;
+    }
+    
+    #b1 {
+        width: 155px;
+        height: 60px;
+        font-size: 18px;
+        position: absolute;
+        right: 10px;
+        background-color: springgreen;
+        text-align: center;
+        font-family: radmehr;
+        border-radius: 7px;
+    }
+    
+    .b2 {
+        width: 155px;
+        height: 60px;
+        font-size: 18px;
+        position: absolute;
+        right: 10px;
+        background-color: springgreen;
+        text-align: center;
+        font-family: radmehr;
+        border-radius: 7px;
+    }
+    
+    .sh {
+        position: absolute;
+        float: left;
+    }
+    
+    #m1,
+    #m2,
+    #m11,
+    #m12,
+    #m13,
+    #m14 {
+        position: absolute;
+        right: 10px;
+    }
+    
+    #t {
+        font-family: radmehr;
+        font-size: 18px;
+        color: black;
+    }
+    
+    #footer {
+        margin-top: 300px;
+    }
+</style>
+
+<body>
+    <center>
+        <div id="container">
+            <div id="header">
+                <img src="h.jpg" width="100%" height="200px">
+            </div>
+            <a href="mathdata.html"><img src="R4.png" width="55px" height="55px" id="o"></a>
+            <h1 id="p">عدد بده، محیط و مساحت بگیر</h1>
+            <div id="a1">
+                <h1 id="f1">مربع و مستطیل</h1><br><br><br><br>
+                <div class="sh"></div>
+                <input id="i1" type="number"><br><br><br><br>
+                <input id="i2" type="number"><br><br><br><br>
+                <button id="b1" onclick="calc()">محاسبه و ترسیم</button><br><br><br><br>
+                <h1 id="m1"></h1><br><br><br><br>
+                <h1 id="m2"></h1>
+            </div><br><br><br>
+            <div>
+                <div class="a2">
+                    <h1 class="f2">مثلث متساوی الاضلاع</h1><br><br><br><br>
+                    <h1><label style="float: right;">:ضلع</label></h1><input id="i3" type="number" style="margin-right: 60px;"><br><br><br><br>
+                    <button id="b1" onclick="tri1()">محاسبه</button><br><br><br><br>
+                    <h1 id="m3"></h1><br><br><br><br>
+                    <h1 id="m4"></h1>
+                </div>
+                <br><br><br><br>
+            </div>
+            <div>
+                <div>
+                    <div class="a2">
+                        <h1 class="f2">مثلث متساوی الساقین</h1><br><br><br><br>
+                        <h1><label style="float: right;">:ارتفاع</label></h1><input id="i4" type="number" style="margin-right: 80px;"><br><br><br><br>
+                        <h1><label style="float: right;">:قاعده</label></h1><input id="i5" type="number" style="margin-right: 80px;"><br><br><br><br>
+                        <h1><label style="float: right;">:ضلع اول</label></h1><input id="i6" type="number" style="margin-right: 100px;"><br><br><br><br>
+                        <h1><label style="float: right;">:ضلع دوم</label></h1><input id="i7" type="number" style="margin-right: 100px;"><br><br><br><br>
+                        <button id="b1" onclick="tri2()">محاسبه</button><br><br><br><br>
+                        <h1 id="m5"></h1><br><br><br><br>
+                        <h1 id="m6"></h1>
+                    </div>
+                    <br><br><br><br>
+                </div>
+                <div>
+                    <div class="a2">
+                        <h1 class="f2">مثلث قائم الزاویه</h1><br><br><br><br>
+                        <h1><label style="float: right;">:وتر</label></h1><input id="i8" type="number" style="margin-right: 60px;"><br><br><br><br>
+                        <h1><label style="float: right;">:ضلع اول</label></h1><input id="i9" type="number" style="margin-right: 100px;"><br><br><br><br>
+                        <h1><label style="float: right;">:ضلع دوم</label></h1><input id="i10" type="number" style="margin-right: 100px;"><br><br><br><br>
+                        <button id="b1" onclick="tri3()">محاسبه</button><br><br><br><br>
+                        <h1 id="m7"></h1><br><br><br><br>
+                        <h1 id="m8"></h1>
+                    </div>
+                    <br><br><br><br>
+                </div>
+            </div>
+            <div class="a2">
+                <h1 class="f2">مثلث متساوی الساقین قائم الزاویه</h1><br><br><br><br>
+                <h1><label style="float: right;">:وتر</label></h1><input id="i11" type="number" style="margin-right: 60px;"><br><br><br><br>
+                <h1><label style="float: right;">: ساق</label></h1><input id="i12" type="number" style="margin-right: 60px;"><br><br><br><br>
+                <button id="b1" onclick="tri4()">محاسبه</button><br><br><br><br>
+                <h1 id="m9"></h1><br><br><br><br>
+                <h1 id="m10"></h1>
+            </div>
+            <br><br><br><br>
+        </div>
+        <div id="a3">
+            <h1 id="f1">دایره</h1><br><br><br><br>
+            <h1 id="f1">:شعاع</h1><br><br><br>
+            <div class="sha"></div>
+            <input id="i13" type="number"><br><br><br><br>
+            <button id="b1" onclick="circ()">محاسبه و ترسیم</button><br><br><br><br>
+            <h1 id="m11"></h1><br><br><br><br>
+            <h1 id="m12"></h1>
+        </div><br><br><br>
+        <div id="a4">
+            <h1 id="f1">بیضی</h1><br><br><br><br>
+            <div class="shap"></div>
+            <input id="i14" type="number"><br><br><br><br>
+            <input id="i15" type="number"><br><br><br><br>
+            <button id="b1" onclick="oval()">محاسبه و ترسیم</button><br><br><br><br>
+            <h1 id="m13"></h1><br><br><br><br>
+            <h1 id="m14"></h1>
+        </div><br><br><br>
+        <div>
+            <br><br><br><br><br><br><br><br><br>
+            <div id="footer">
+                <img src="f.jpg" width="100%">
+            </div>
+        </div>
+    </center>
+</body>
+<script>
+    function calc() {
+        var a = Number(document.getElementById("i1").value);
+        var b = Number(document.getElementById("i2").value);
+        var mo = 2 * (a + b);
+        var ma = a * b;
+        if (a == "" || b == "") {
+            document.getElementById("m1").innerHTML = "لطفا اعداد طبیعی وارد کنید";
+        } else if (a < 0 || b < 0) {
+            document.getElementById("m1").innerHTML = "اعداد منفی قابل قبول نیستند";
+        } else if (a == b) {
+            document.getElementById("m1").innerHTML = "محیط مربع برابرست با =" + mo;
+            document.getElementById("m2").innerHTML = "مساحت مربع برابرست با =" + ma;
+        } else if (a != b) {
+            document.getElementById("m1").innerHTML = "محیط مستطیل برابرست با =" + mo;
+            document.getElementById("m2").innerHTML = "مساحت مستطیل برابرست با =" + ma;
+        }
+
+        document.getElementsByTagName("div")[3].style.width = a + "cm";
+        document.getElementsByTagName("div")[3].style.height = b + "cm";
+        document.getElementsByTagName("div")[3].style.backgroundColor = "blue";
+        document.getElementsByTagName("div")[3].style.transitionDuration = "2s";
+        //document.getElementsByTagName("div")[3].style.overflow = "scroll";
+    }
+
+    function tri1() {
+        var a = Number(document.getElementById("i3").value);
+        var mo = 3 * a;
+        var ma = (1.73 / 2) * (a * a);
+        if (a == "") {
+            document.getElementById("m3").innerHTML = "لطفا اعداد طبیعی وارد کنید";
+        } else if (a < 0) {
+            document.getElementById("m3").innerHTML = "اعداد منفی قابل قبول نیستند";
+        } else {
+            document.getElementById("m3").innerHTML = "محیط مثلث برابرست با =" + mo;
+            document.getElementById("m4").innerHTML = "مساحت مثلث برابرست با &#8771;" + ma;
+        }
+    }
+
+    function tri2() {
+        var a = Number(document.getElementById("i4").value);
+        var b = Number(document.getElementById("i5").value);
+        var c = Number(document.getElementById("i6").value);
+        var d = Number(document.getElementById("i7").value);
+        mo = a + b + c + d;
+        ma = (a * b) / 2;
+        a2 = a * a;
+        b2 = (b / 2) * (b / 2);
+        c2 = c * c;
+        if (a == "" || b == "" || c == "" || d == "") {
+            document.getElementById("m5").innerHTML = "لطفا اعداد طبیعی وارد کنید";
+        } else if (a < 0 || b < 0 || c < 0 || d < 0) {
+            document.getElementById("m5").innerHTML = "اعداد منفی قابل قبول نیستند";
+        } else if (c != d || c2 != b2 + a2) {
+            document.getElementById("m5").innerHTML = ".این مثلث متساوی الساقین نیست";
+        } else {
+            document.getElementById("m5").innerHTML = "محیط مثلث برابرست با =" + mo;
+            document.getElementById("m6").innerHTML = "مساحت مثلث برابرست با =" + ma;
+        }
+    }
+
+    function tri3() {
+        var a = Number(document.getElementById("i8").value);
+        var b = Number(document.getElementById("i9").value);
+        var c = Number(document.getElementById("i10").value);
+        mo = a + b + c;
+        ma = (b * c) / 2;
+        if (a == "" || b == "" || c == "") {
+            document.getElementById("m7").innerHTML = "لطفا اعداد طبیعی وارد کنید";
+        } else if (a < 0 || b < 0 || c < 0) {
+            document.getElementById("m7").innerHTML = "اعداد منفی قابل قبول نیستند";
+        } else if (a * a != b * b + c * c) {
+            document.getElementById("m7").innerHTML = ".این مثلث قائم الزاویه نیست";
+        } else {
+            document.getElementById("m7").innerHTML = "محیط مثلث برابرست با =" + mo;
+            document.getElementById("m8").innerHTML = "مساحت مثلث برابرست با =" + ma;
+        }
+    }
+
+    function tri4() {
+        var a = Number(document.getElementById("i11").value);
+        var b = Number(document.getElementById("i12").value);
+        a2 = a * a;
+        mo = a + b + b;
+        ma = b * b;
+        if (a == "" || b == "") {
+            document.getElementById("m9").innerHTML = "لطفا اعداد طبیعی وارد کنید";
+        } else if (a < 0 || b < 0) {
+            document.getElementById("m9").innerHTML = "اعداد منفی قابل قبول نیستند";
+        } //else if (a2 != ma + ma) {
+        //document.getElementById("m9").innerHTML = ".این مثلث متساوی الساقین قائم الزاویه نیست";}
+        else {
+            document.getElementById("m9").innerHTML = "محیط مثلث برابرست با =" + mo;
+            document.getElementById("m10").innerHTML = "مساحت مثلث برابرست با =" + ma;
+        }
+    }
+
+    function circ() {
+        var a = Number(document.getElementById("i13").value);
+        b = 2 * a;
+        c = a * a;
+        mo = 3.14 * b;
+        ma = 3.14 * c;
+        if (a == "") {
+            document.getElementById("m11").innerHTML = "لطفا اعداد طبیعی وارد کنید";
+        } else if (a < 0) {
+            document.getElementById("m11").innerHTML = "اعداد منفی قابل قبول نیستند";
+        } else {
+            document.getElementById("m11").innerHTML = "محیط دایره برابرست با =" + mo;
+            document.getElementById("m12").innerHTML = "مساحت دایره برابرست با =" + ma;
+        }
+        document.getElementsByTagName("div")[12].style.width = b + "cm";
+        document.getElementsByTagName("div")[12].style.height = b + "cm";
+        document.getElementsByTagName("div")[12].style.borderRadius = "50%";
+        document.getElementsByTagName("div")[12].style.backgroundColor = "blue";
+        document.getElementsByTagName("div")[12].style.transitionDuration = "2s";
+    }
+
+    function oval() {
+        var a = Number(document.getElementById("i14").value);
+        var b = Number(document.getElementById("i15").value);
+        c = a + b;
+        mo = 3.14 * c;
+        ma = 3.14 * a * b;
+        if (a == "" || b == "") {
+            document.getElementById("m13").innerHTML = "لطفا اعداد طبیعی وارد کنید";
+        } else if (a < 0 || b < 0) {
+            document.getElementById("m14").innerHTML = "اعداد منفی قابل قبول نیستند";
+        } else {
+            document.getElementById("m13").innerHTML = "محیط بیضی برابرست با =" + mo;
+            document.getElementById("m14").innerHTML = "مساحت بیضی برابرست با =" + ma;
+            document.getElementsByTagName("div")[14].style.width = a + "cm";
+            document.getElementsByTagName("div")[14].style.height = b + "cm";
+            document.getElementsByTagName("div")[14].style.borderRadius = "50%";
+            document.getElementsByTagName("div")[14].style.backgroundColor = "blue";
+            document.getElementsByTagName("div")[14].style.transitionDuration = "2s";
+        }
+    }
+</script>
+
+</html>

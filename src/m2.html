@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="R4.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معادله درجه دو</title>
+</head>
+<style>
+    #container{
+        height: auto;
+        width: 100%;
+    }
+    #h{
+        position: absolute;
+        right: 100px;
+        top: 50px;
+    }
+    @font-face {
+        font-family:radmehr;
+        src: url("Parastoo.eot");
+        src: url("Parastoo.ttf");
+        src: url("Parastoo.woff");
+        src: url("Parastoo.woff2");
+    }
+    .x{
+        font-size: 28px;
+        font-family: radmehr;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input{
+        border-radius: 7px;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        text-align: center;
+        font-family: radmehr;
+        background-color: red;
+    }
+    #o{
+        font-family: radmehr;
+        position: absolute;
+        top: 15px;
+        left: 530px;
+    }
+    #a{
+        margin-top: 10px;
+    }
+    #s{
+        font-size: 28px;
+        text-align: center;
+        font-family:radmehr;
+        padding: 8px;
+        border-radius: 7px;
+        background-color: springgreen;
+    }
+    #t{
+        transition: all 2s;
+        font-family: radmehr;
+        font-size: 20px;
+    }
+    #u{
+        transition: all 2s;
+        font-family: radmehr;
+        font-size: 20px;
+    }
+    #footer{
+        margin-top: 100px;
+    }
+</style>
+<body>
+    <center>
+        <div id="container">
+            <div id="header">
+            <img src="h.jpg" width="100%" height="200px">
+            </div>
+            <a href="mathdata.html"><img src="R4.png" width="55px" height="55px" id="h"></a>
+            <h1 id="o">حل معادلات درجه دو</h1>
+            <div id="a">
+                <label><input id="l" type="number"></label>
+                <label class="x">&nbsp; X<sup>2</sup>   + &nbsp;</label>
+                <label><input id="m" type="number"></label>
+                <label class="x">&nbsp; X    + &nbsp;</label>
+                <label class="x"><input id="n" type="number">&nbsp; = &nbsp;</label>
+                <label class="x">0</label><br><br><br><br>
+                <button onclick="calc()" id="s">محاسبه</button><br><br><br>
+                <h1 id="t"></h1><br><br><br>
+                <h1 id="u"></h1><br><br><br>
+            </div>
+            <div id="footer">
+            <img src="f.jpg" width="100%">
+            </div>
+        </div>
+    </center>
+</body>
+    <script>
+        function calc(){
+            var a=document.getElementById("l").value;
+            var b=document.getElementById("m").value;
+            var c=document.getElementById("n").value;
+            var d1=Math.pow(b, 2);
+            var d2=(4*a*c);
+            var d=d1-d2;
+            if(a=="" || b=="" || c=="" ){
+                document.getElementById("t").innerHTML="لطفا عدد وارد نمایید";
+            }
+            else if (d<0){
+                document.getElementById("t").innerHTML=".معادله جوابی ندارد"
+            }
+            else if (d==0){
+                var d3=Math.sqrt(d)
+                var x1=((-b)+(d3))/(2*a);
+                var x2=((-b)-(d3))/(2*a);
+                document.getElementById("t").innerHTML="ریشه مضاعف =  "+x1;
+            }
+            else {
+                var d3=Math.sqrt(d)
+                var x1=((-b)+(d3))/(2*a);
+                var x2=((-b)-(d3))/(2*a);
+                document.getElementById("t").innerHTML=x1+" = ریشه اول";
+                document.getElementById("u").innerHTML=x2+" = ریشه دوم";
+            }
+       }
+    </script>
+</html>

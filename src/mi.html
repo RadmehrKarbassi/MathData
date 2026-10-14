@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="R4.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میانگین</title>
+</head>
+<style>
+    #container {
+        height: auto;
+        width: 100%;
+    }
+    
+    #h {
+        position: absolute;
+        right: 100px;
+        top: 50px;
+    }
+    
+    @font-face {
+        font-family: radmehr;
+        src: url("Parastoo.eot");
+        src: url("Parastoo.ttf");
+        src: url("Parastoo.woff");
+        src: url("Parastoo.woff2");
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    input {
+        border-radius: 7px;
+        font-size: 28px;
+        text-align: center;
+        font-family: radmehr;
+        background-color: red;
+    }
+    
+    #o {
+        font-family: radmehr;
+        position: absolute;
+        top: 15px;
+        left: 640px;
+    }
+    
+    #sidebar {
+        margin-top: 10px;
+    }
+    
+    #s {
+        height: 50px;
+        width: 120px;
+        font-size: 28px;
+        text-align: center;
+        font-family: radmehr;
+        padding: 8px;
+        border-radius: 7px;
+        background-color: red;
+    }
+    
+    #q {
+        font-size: 21px;
+        height: 60px;
+        width: 150px;
+        text-align: center;
+        font-family: radmehr;
+        padding: 8px;
+        border-radius: 7px;
+        background-color: springgreen;
+    }
+    
+    #p {
+        font-size: 25px;
+        font-family: radmehr;
+    }
+    
+    #p2 {
+        font-size: 25px;
+        font-family: radmehr;
+    }
+    
+    #l {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #m {
+        width: 80px;
+        height: 80px;
+    }
+    
+    #z {
+        font-size: 28px;
+        font-family: radmehr;
+        position: absolute;
+        top: 650px;
+        left: 500px;
+    }
+    
+    #y {
+        position: absolute;
+        left: 590px;
+        top: 300px;
+    }
+    
+    #t {
+        transition: all 2s;
+    }
+    
+    #footer {
+        margin-top: 70px;
+    }
+</style>
+
+<body>
+    <center>
+        <div id="container">
+            <div id="header">
+                <img src="h.jpg" width="100%" height="200px">
+                <a href="mathdata.html"><img src="R4.png" width="55px" height="55px" id="h"></a>
+                <h1 id="o">میانگین</h1>
+            </div>
+            <p id="p">میانگین چند عدد را میخواهید بگیرید؟</p><br>
+            <p id="p2">:تعداد اعداد خود را وارد کنید</p>
+            <input id="s" type="number"><br><br><br><br>
+            <button id="q" onclick="calc()">اعداد را وارد کن</button>
+            <h1 id="z"></h1>
+            <div id="footer">
+                <img src="f.jpg" width="100%">
+            </div>
+        </div>
+    </center>
+</body>
+<script>
+    function calc() {
+        var f = document.getElementById("s").value;
+        var sum = 0;
+        if (f == "") {
+            document.getElementById("z").innerHTML = "لطفا عدد وارد کنید";
+        } else if (f <= 0) {
+            document.getElementById("z").innerHTML = "اعداد زیر 0 قابل قبول نیستند";
+        } else {
+            for (var i = 1; i <= f; i++) {
+                var d = Number(prompt("اعداد خود را وارد کنید"));
+                sum += d;
+                var a = sum / f;
+                //document.write(d.value += 1 - 1)
+                document.getElementById("z").innerHTML = "میانگین اعداد شما برابر است با = " + a;
+            }
+        }
+    }
+</script>
+
+</html>

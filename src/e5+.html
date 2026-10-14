@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="R4.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتحاد چاق و لاغر</title>
+</head>
+<style>
+    #container{
+        height: auto;
+        width: 100%;
+    }
+    #h{
+        position: absolute;
+        right: 100px;
+        top: 50px;
+    }
+    @font-face {
+        font-family:radmehr;
+        src: url("Parastoo.eot");
+        src: url("Parastoo.ttf");
+        src: url("Parastoo.woff");
+        src: url("Parastoo.woff2");
+    }
+    .x{
+        font-size: 35px;
+        font-family: radmehr;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input{
+        border-radius: 7px;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        text-align: center;
+        font-family: radmehr;
+        background-color: red;
+    }
+    #o{
+        font-family: radmehr;
+        position: absolute;
+        top: 15px;
+        left: 560px;
+    }
+    #a{
+        margin-top: 10px;
+    }
+    #s{
+        font-size: 28px;
+        text-align: center;
+        font-family:radmehr;
+        padding: 8px;
+        border-radius: 7px;
+        background-color: springgreen;
+    }
+    #t{
+        transition: all 2s;
+        font-family: radmehr;
+        font-size: 30px;
+    }
+    #u{
+        transition: all 2s;
+        font-family: radmehr;
+        font-size: 30px;
+    }
+    #footer{
+        margin-top: 100px;
+    }
+</style>
+<body>
+    <center>
+        <div id="container">
+            <div id="header">
+            <img src="h.jpg" width="100%" height="200px">
+            </div>
+            <a href="mathdata.html"><img src="R4.png" width="55px" height="55px" id="h"></a>
+            <h1 id="o">اتحاد چاق و لاغر</h1>
+            <div id="a">
+                <label class="x">( &nbsp;<input id="l" type="text" type="number"></label>
+                <label class="x">&nbsp; + &nbsp;</label>
+                <label class="x"><input id="m" type="text" type="number">&nbsp; ) </label>
+                <label class="x">× ( &nbsp;<input id="n" type="text" type="number"> <sup>2</sup></label>
+                <label class="x">&nbsp; - &nbsp;</label>
+                <label class="x"><input id="p" type="text" type="number">&nbsp; + &nbsp;</label>
+                <label class="x"><input id="q" type="text" type="number"> <sup>2</sup>&nbsp; )</label><br><br><br><br>
+                <button onclick="calc()" id="s">محاسبه</button>
+                <h1 id="t"></h1>
+                <h1 id="u"></h1>
+            </div>
+            <div id="footer">
+            <img src="f.jpg" width="100%">
+            </div>
+        </div>
+    </center>
+</body>
+    <script>
+        function calc(){
+            var a=document.getElementById("l").value;
+            var b=document.getElementById("m").value;
+            var c=document.getElementById("n").value;
+            var d=document.getElementById("p").value;
+            var e=document.getElementById("q").value;
+            var f=Math.pow(a, 3);
+            var g=Math.pow(b, 3);
+            var i=f+g
+            if(a=="" || b=="" || c=="" || d=="" || e==""){
+                document.getElementById("t").innerHTML="لطفا عدد وارد نمایید";
+            }
+            else if(a!=c || b!=e){
+                document.getElementById("t").innerHTML=".این اتحاد، اتحاد چاق و لاغر نیست";
+            }
+            else if(a==c && b==e){
+                if ("a==Number" && "b==Number" && "c==Number" && "d==Number" && "e==Number"){
+                    document.getElementById("t").innerHTML=a+"<sup>3</sup>"+"+"+b+"<sup>3</sup>";
+                    document.getElementById("u").innerHTML="="+i;
+                }
+                else if ("a==Text.toString()" || "b==Text.toString()" || "c==Text.toString()" || "d==Text.toString()" || "e==Text.toString()"){
+                    document.getElementById("t").innerHTML=a+"<sup>3</sup>"+"+"+b+"<sup>3</sup>";
+                    document.getElementById("u").innerHTML="="+i;
+                }
+            }
+        }
+    </script>
+</html>

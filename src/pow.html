@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="R4.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توان</title>
+</head>
+<style>
+    #container{
+        height: auto;
+        width: 100%;
+    }
+    #h{
+        position: absolute;
+        right: 100px;
+        top: 50px;
+    }
+    @font-face {
+        font-family:radmehr;
+        src: url("Parastoo.eot");
+        src: url("Parastoo.ttf");
+        src: url("Parastoo.woff");
+        src: url("Parastoo.woff2");
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input{
+        border-radius: 7px;
+        font-size: 28px;
+        text-align: center;
+        font-family: radmehr;
+        background-color: red;
+    }
+    #o{
+        font-family: radmehr;
+        position: absolute;
+        top: 15px;
+        left: 640px;
+    }
+    #a{
+        margin-top: 10px;
+    }
+    #s{
+        font-size: 28px;
+        text-align: center;
+        font-family:radmehr;
+        padding: 8px;
+        border-radius: 7px;
+        background-color: springgreen;
+    }
+    #l{
+        width: 80px;
+        height: 80px;
+    }
+    #m{
+        width: 50px;
+        height: 50px;
+    }
+    #z{
+        font-size: 28px;
+        font-family: radmehr;
+        position: absolute;
+        left: 720px;
+        top: 250px;
+    }
+    #y{
+        position: absolute;
+        left: 630px;
+        top: 310px;
+    }
+    #t{
+        transition: all 2s;
+    }
+    #footer{
+        margin-top: 100px;
+    }
+</style>
+<body>
+    <center>
+        <div id="container">
+            <div id="header">
+            <img src="h.jpg" width="100%" height="200px">
+            </div>
+            <a href="mathdata.html"><img src="R4.png" width="55px" height="55px" id="h"></a>
+            <h1 id="o">توان</h1>
+            <div id="a">
+                <label id="y"><input id="l" type="number"></label>
+                <label id="z"><input id="m" type="number"></label><br><br><br><br><br><br><br><br><br><br><br><br>
+                <button onclick="calc()" id="s">محاسبه</button>
+                <h1 id="t"></h1>
+            </div>
+            <div id="footer">
+            <img src="f.jpg" width="100%">
+            </div>
+        </div>
+    </center>
+</body>
+    <script>
+        function calc(){
+            var a=document.getElementById("l").value;
+            var b=document.getElementById("m").value;
+            if(b==0){
+                document.getElementById("t").innerHTML="1";
+            }
+            else if(a==0){
+                document.getElementById("t").innerHTML="0";
+            }
+            else if(a==0 && b==0){
+                document.getElementById("t").innerHTML="1";
+            }
+            else if(a=="" || b===""){
+                document.getElementById("t").innerHTML="لطفا عدد وارد نمایید";
+            }
+            else{
+                var c=Math.pow(a, b)
+                document.getElementById("t").innerHTML=c;
+            }
+        }
+    </script>
+</html>
